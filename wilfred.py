@@ -19,7 +19,7 @@ casual = 473276007860797453
 disabled_commands = []
 
 cooldown = []
-ignore_list = ["388022143931383818", "426489102838530050", "427869023552667649", "473284044650577920"] #Added #commands to the list to avoid people spamming commands for money
+ignore_list = ["388022143931383818", "426489102838530050", "427869023552667649"]
 
 Client = discord.Client()
 bot_prefix = "!"
