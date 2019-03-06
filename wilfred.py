@@ -482,7 +482,17 @@ async def statmod(ctx, *args):
                 elif str(reaction.emoji) == "\U0001F44E":
                     await message.channel.send("Operation Cancelled")
                 await confirmation.clear_reactions()
-            
+       
+    
+@Bot.command(client)
+async def announce(ctx, server: str, *, announcement: str):
+    if "Admin" in [role.name for role in ctx.message.author.roles]:
+        if server.upper() == "SERVER":
+            role = discord.utils.get(ctx.message.guild.roles, name="Server Announcements")
+            await role.edit(mentionable=True)
+            await client.get_channel(473284532800454667).send("%s\n%s\n\u200b\nSent By: **%s**" % (role.mention, announcement, str(ctx.message.author)))
+            await role.edit(mentionable=False)               
+           
 
 #-----Command Register------
 
